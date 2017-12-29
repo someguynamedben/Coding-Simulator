@@ -9,7 +9,7 @@ import javafx.scene.layout.HBox;
 
 /**
  * This class created by "TheItachiUchiha" on GitHub via the link to his GitHub repo -> https://gist.github.com/TheItachiUchiha/12e40a6f3af6e1eb6f75
- * I plan to create my own implementation of this code down the road, this just serves as a temporary placeholder.
+ * I plan to create my own implementation of this code down the road, this just serves as a temporary placeholder. Also I modified it a bit.
  *
  * @author TheItachiUchiha
  * @see <a href="https://gist.github.com/TheItachiUchiha/12e40a6f3af6e1eb6f75">https://gist.github.com/TheItachiUchiha/12e40a6f3af6e1eb6f75</a>
@@ -52,6 +52,9 @@ public class ToggleSwitch extends HBox {
         button.prefHeightProperty().bind(heightProperty());
     }
     
+    /**
+     * Toggles the value of the switch on or off.
+     */
     public void toggleOnOrOff(){
         if(switchedOn.getValue()){
             switchedOn.setValue(false);

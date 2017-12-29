@@ -1,13 +1,15 @@
 package CodingSim;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+/**
+ * Custom pane that contains the switches for the program.
+ */
 public class Controller extends Pane{
     private ToggleSwitch switchOne = new ToggleSwitch();
     private ToggleSwitch switchTwo = new ToggleSwitch();
@@ -17,8 +19,8 @@ public class Controller extends Pane{
     private ToggleSwitch switchSix = new ToggleSwitch();
     private Text bug258 = new Text("Bug #258");
     private Text bug259 = new Text("Bug #259");
-    private Text bug260 = new Text("Bug #260");
-    private Text bug261 = new Text("Bug #261");
+    private Text bug260 = new Text("Bug #260");     //I should've named these differently so it'd be easier to refer to
+    private Text bug261 = new Text("Bug #261");     //them while programming, but oh well.
     private Text bug262 = new Text("Bug #262");
     private Text bug263 = new Text("Bug #263");
     private HBox hBoxOne = new HBox(switchOne, bug258);
@@ -29,6 +31,9 @@ public class Controller extends Pane{
     private HBox hBoxSix = new HBox(switchSix, bug263);
     private VBox vBox = new VBox(hBoxOne, hBoxTwo, hBoxThree, hBoxFour, hBoxFive, hBoxSix);
     
+    /**
+     * Constructor for the custom pane. Sets up the switches and stuffs.
+     */
     Controller(){
         switchOne.setMinHeight(25);
         switchOne.setMaxHeight(25);
@@ -84,6 +89,11 @@ public class Controller extends Pane{
         this.getChildren().add(vBox);
     }
     
+    /**
+     * Handles what happens when a switch is clicked on.
+     *
+     * @param mouseEvent Mouse clicked event.
+     */
     private void handleButtonClick(MouseEvent mouseEvent){
         if(mouseEvent.getSource().equals(switchOne)){
             switchThree.toggleOnOrOff();
@@ -93,8 +103,10 @@ public class Controller extends Pane{
         }else if(mouseEvent.getSource().equals(switchThree)){
             switchSix.toggleOnOrOff();
             switchFour.toggleOnOrOff();
+            switchTwo.toggleOnOrOff();
         }else if(mouseEvent.getSource().equals(switchFour)){
             switchFive.toggleOnOrOff();
+            switchOne.toggleOnOrOff();
         }else if(mouseEvent.getSource().equals(switchFive)){
             switchOne.toggleOnOrOff();
             switchThree.toggleOnOrOff();
